@@ -1,0 +1,40 @@
+Package: {__PKGNAME}
+Version: @VERSION@-@BUILD@
+Section: misc
+Priority: optional
+Architecture: {__ARCH}
+Essential: no
+<<<<<<< HEAD:release/deb-control.tmpl
+Maintainer: Mozilla Research <joshmoz@gmail.com>
+Homepage: https://github.com/mozilla/mozjpeg
+Installed-Size: {__SIZE}
+Description: A JPEG codec that provides increased compression for JPEG images (at the expense of compression performance)
+ mozjpeg is a fork of libjpeg-turbo that aims to speed up load times of web
+ pages by reducing the size (and, by extension, the transmission time) of JPEG
+ files.  It accomplishes this by enabling optimized Huffman trees and
+ progressive entropy coding by default in the JPEG compressor, as well as
+ splitting the spectrum of DCT coefficients into separate scans and using
+ Trellis quantisation.
+=======
+Maintainer: @PKGVENDOR@ <@PKGEMAIL@>
+Homepage: @PKGURL@
+Installed-Size: {__SIZE}
+Description: A SIMD-accelerated JPEG codec that provides both the libjpeg and TurboJPEG APIs
+ libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2,
+ AVX2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression
+ on x86, x86-64, ARM, and PowerPC systems, as well as progressive JPEG
+ compression on x86 and x86-64 systems.  On such systems, libjpeg-turbo is
+ generally 2-6x as fast as libjpeg, all else being equal.  On other types of
+ systems, libjpeg-turbo can still outperform libjpeg by a significant amount,
+ by virtue of its highly-optimized Huffman coding routines.  In many cases, the
+ performance of libjpeg-turbo rivals that of proprietary high-speed JPEG
+ codecs.
+>>>>>>> tb20:release/deb-control.in
+ .
+ Although it is based on libjpeg-turbo, mozjpeg is not intended to be a
+ general-purpose or high-performance JPEG library.  Its performance is highly
+ "asymmetric".  That is, the JPEG files it generates require much more time to
+ compress than to decompress.  When the default settings are used, mozjpeg is
+ considerably slower than libjpeg-turbo or even libjpeg at compressing images.
+ Thus, it is not generally suitable for real-time compression.  It is best used
+ as part of a web encoding workflow.

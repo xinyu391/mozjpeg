@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="1">
+<<<<<<< HEAD:release/Distribution.xml
+	<title>mozjpeg</title>
+=======
+	<title>@CMAKE_PROJECT_NAME@</title>
+>>>>>>> tb20:release/Distribution.xml.in
+	<welcome file="Welcome.rtf" />
+	<readme file="ReadMe.txt" />
+	<license file="License.rtf" />
+	<domains
+		enable_anywhere="false"
+		enable_currentUserHome="false"
+		enable_localSystem="true"
+	/>
+	<options customize="never" />
+	<choices-outline>
+		<line choice="default">
+<<<<<<< HEAD:release/Distribution.xml
+			<line choice="com.mozilla.mozjpeg"/>
+		</line>
+	</choices-outline>
+	<choice id="default"/>
+	<choice id="com.mozilla.mozjpeg" visible="false">
+		<pkg-ref id="com.mozilla.mozjpeg"/>
+	</choice>
+	<pkg-ref auth="root"
+		id="com.mozilla.mozjpeg">mozjpeg.pkg</pkg-ref>
+=======
+			<line choice="@PKGID@"/>
+		</line>
+	</choices-outline>
+	<choice id="default"/>
+	<choice id="@PKGID@" visible="false">
+		<pkg-ref id="@PKGID@"/>
+	</choice>
+	<pkg-ref auth="root"
+		id="@PKGID@">@PKGNAME@.pkg</pkg-ref>
+>>>>>>> tb20:release/Distribution.xml.in
+</installer-gui-script>
